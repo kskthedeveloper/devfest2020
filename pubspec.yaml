@@ -1,0 +1,77 @@
+name: flutter_presentations
+description: Presentations made with Flutter
+
+publish_to: 'none'
+version: 1.0.0
+
+
+environment:
+  sdk: ">=2.6.0-dev.0.0.flutter-1103600280 <3.0.0"
+  flutter: ">=1.12.1 <2.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # mobile_flutter_merchant:
+  #   path: c:\Users\tpolanski\Documents\GitHub\mobile_flutter_merchant\
+  flutter_localizations:
+    sdk: flutter
+#  animation_cheat_page:
+#    git:
+#      url: git://github.com/tomaszpolanski/flutter-animations.git
+#      ref: master
+
+  cupertino_icons: ^0.1.0
+  flutter_sidekick: ^0.1.3
+  google_fonts: ^1.1.0
+  http: ^0.12.0+1
+  mockito: ^4.1.1
+  process_run: ^0.10.1
+  qr_flutter: ^3.0.1
+  rxdart: ^0.24.1
+  presentation: ^0.0.11
+  url_launcher: ^5.4.1
+  fake_async: ^1.1.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  test: ^1.9.4
+  fast_flutter_driver: ^1.1.0
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Monoserrat/Montserrat-Thin.ttf
+          weight: 100
+        - asset: fonts/Monoserrat/Montserrat-Light.ttf
+          weight: 300
+        - asset: fonts/Monoserrat/Montserrat-Regular.ttf
+          weight: 400
+        - asset: fonts/Monoserrat/Montserrat-Medium.ttf
+          weight: 500
+        - asset: fonts/Monoserrat/Montserrat-Bold.ttf
+          weight: 700
+        - asset: fonts/Monoserrat/Montserrat-Black.ttf
+          weight: 900
+
+    - family: Floks
+      fonts:
+        - asset: fonts/folks.ttf
+          weight: 400
+
+    - family: AnonymousPro
+      fonts:
+        - asset: fonts/AnonymouPro/AnonymousPro-Regular.ttf
+          weight: 400
+        - asset: fonts/AnonymouPro/AnonymousPro-Bold.ttf
+          weight: 700
