@@ -41,6 +41,7 @@ dev_dependencies:
     sdk: flutter
   test: ^1.9.4
   fast_flutter_driver: ^1.1.0
+  arrow_path: ^1.0.0
 
 flutter:
 

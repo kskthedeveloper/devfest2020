@@ -3,8 +3,8 @@ import 'package:flutter_presentations/features/devfast2020/shared/stacked_page_w
 import 'package:flutter_presentations/shared/stacked_page.dart';
 import 'package:presentation/presentation.dart';
 
-class FirstOneWithAnimation extends StatelessWidget {
-  const FirstOneWithAnimation(
+class NextStep extends StatelessWidget {
+  const NextStep(
       this.controller, {
         Key key,
       }) : super(key: key);
@@ -18,7 +18,7 @@ class FirstOneWithAnimation extends StatelessWidget {
         controller: controller,
         spacing: MediaQuery.of(context).size.width / 4.5,
         children: [
-          Text('First One With Animation'),
+          Text('Next Step'),
           Image.asset('assets/ui_2.gif'),
         ],
       ),

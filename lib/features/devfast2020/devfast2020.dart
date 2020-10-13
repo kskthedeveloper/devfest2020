@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_presentations/features/big_applications/pages/the_app.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/arrow_test.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/documentation_time.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/first_one_with_animation.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/flutter.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/intro_page.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/next_step.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/the_basic.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_beginning.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/wavy_slider.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/what_is_flutter.dart';
 import 'package:flutter_presentations/shared/logo.dart';
 import 'package:flutter_presentations/shared/stacked_page.dart';
@@ -52,9 +58,15 @@ class _DevFast2020State extends State<DevFast2020> {
           builder: (_) {
             final children = [
               const IntroPage(),
+              ExampleApp(),
+              Flutter(presentationController),
+              TheBasic(presentationController),
               WhatIsFlutter(presentationController),
               TheBeginning(presentationController),
               FirstOneWithAnimation(presentationController),
+              NextStep(presentationController),
+              WavySlider(presentationController),
+              DocumentationTime(presentationController),
               TheApp(presentationController),
             ];
 
