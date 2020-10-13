@@ -4,6 +4,7 @@ import 'package:flutter_presentations/features/code_reuse/examples/examples.dart
 import 'package:flutter_presentations/features/code_reuse/true_code_reuse.dart';
 import 'package:flutter_presentations/features/coding/coding.dart';
 import 'package:flutter_presentations/features/convincing_for_flutter/convincing.dart';
+import 'package:flutter_presentations/features/devfast2020/devfast2020.dart';
 import 'package:flutter_presentations/features/slivers/slivers.dart';
 import 'package:flutter_presentations/features/testing/testing.dart';
 
@@ -29,9 +30,9 @@ class _PresentationList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Presentations'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Presentations'),
+      // ),
       body: ListView(
         children: [
           ListTile(
@@ -75,6 +76,12 @@ class _PresentationList extends StatelessWidget {
             subtitle: const Text(Examples.subtitle),
             onTap: () => Navigator.of(context).push(
                 MaterialPageRoute<void>(builder: (_) => const Examples())),
+          ),
+          ListTile(
+            title: const Text(DevFast2020.title),
+            subtitle: const Text(DevFast2020.subtitle),
+            onTap: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const DevFast2020())),
           ),
         ],
       ),
