@@ -5,6 +5,7 @@ import 'package:flutter_presentations/features/devfast2020/pages/arrow_test.dart
 import 'package:flutter_presentations/features/devfast2020/pages/documentation_time.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/first_one_with_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/flutter.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/implicit_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/intro_page.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/next_step.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_basic.dart';
@@ -69,6 +70,7 @@ class _DevFast2020State extends State<DevFast2020> {
               WavySlider(presentationController),
               DocumentationTime(presentationController),
               AnimationType(presentationController),
+              ImplicitAnimation(presentationController),
 
               TheApp(presentationController),// to detlete
             ];
