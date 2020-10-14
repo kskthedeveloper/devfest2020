@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_presentations/features/big_applications/pages/the_app.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/animation_type.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/arrow_test.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/buildin_code_example.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/buildin_example.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/documentation_time.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/first_one_with_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/flutter.dart';
@@ -71,6 +73,8 @@ class _DevFast2020State extends State<DevFast2020> {
               DocumentationTime(presentationController),
               AnimationType(presentationController),
               ImplicitAnimation(presentationController),
+              BuiltInExample(presentationController),
+              BuiltInCodeExample(),
 
               TheApp(presentationController),// to detlete
             ];

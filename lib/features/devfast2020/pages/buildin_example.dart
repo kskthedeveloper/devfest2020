@@ -7,11 +7,11 @@ import 'package:flutter_presentations/shared/stacked_page.dart';
 import 'package:presentation/presentation.dart';
 import 'package:vector_math/vector_math_64.dart' as vmath;
 
-class ImplicitAnimation extends StatelessWidget {
-  const ImplicitAnimation(
-    this.controller, {
-    Key key,
-  }) : super(key: key);
+class BuiltInExample extends StatelessWidget {
+  const BuiltInExample(
+      this.controller, {
+        Key key,
+      }) : super(key: key);
   final PresentationController controller;
 
   @override
@@ -25,26 +25,22 @@ class ImplicitAnimation extends StatelessWidget {
             child: StackedPageWithTitleAndList(
               controller: controller,
               spacing: 30,
-              children: [
-                Text('Implicit Animation'),
+              children: const [
+                Text('Built-in Implicits Animation'),
                 Text(
-                  'Built In (AnimatedFoo)',
+                  'What do we need?',
                   style: TextStyle(fontSize: 50),
                 ),
                 Text(
-                  'AnimatedOpacity',
+                  'Start Value and End Value',
                   style: TextStyle(fontSize: 50),
                 ),
                 Text(
-                  'AnimatedContainer',
+                  'Duration',
                   style: TextStyle(fontSize: 50),
                 ),
                 Text(
-                  'AnimatedPositioned',
-                  style: TextStyle(fontSize: 50),
-                ),
-                Text(
-                  'AnimatedSize',
+                  'Curve',
                   style: TextStyle(fontSize: 50),
                 ),
               ],
@@ -72,6 +68,7 @@ class _ExampleState extends State<Example> {
   var _borderSize = 1.0;
   var _borderRadius = 0.0;
   var _rotation = 0.0;
+  var _duration = Duration(milliseconds: 500);
   var _curve = Curves.linear;
 
   var _boxShadow = [
@@ -93,6 +90,7 @@ class _ExampleState extends State<Example> {
       width = (width == _startWidth) ? _startWidth / 2 : _startWidth;
       height = (height == _startHeight) ? _startHeight / 2 : _startHeight;
       color = (color == _startColor) ? Colors.blue : _startColor;
+      _opacity = 1;
     });
   }
 
@@ -101,22 +99,25 @@ class _ExampleState extends State<Example> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        AnimatedOpacity(
-          duration: Duration(milliseconds: 500),
-          opacity: _opacity,
-          child: AnimatedContainer(
-            curve: _curve,
-            decoration: BoxDecoration(
-              border: Border.all(width: _borderSize),
-              boxShadow: _boxShadow,
-              borderRadius: BorderRadius.circular(_borderRadius),
-              color: color,
-            ),
+        GestureDetector(
+          onTap: _animateContainer,
+          child: AnimatedOpacity(
             duration: Duration(milliseconds: 500),
-            width: height,
-            height: height,
-            transform: Matrix4.translation(vmath.Vector3(0, 0, 0))
-              ..rotateZ(_rotation),
+            opacity: _opacity,
+            child: AnimatedContainer(
+              curve: _curve,
+              decoration: BoxDecoration(
+                border: Border.all(width: _borderSize),
+                boxShadow: _boxShadow,
+                borderRadius: BorderRadius.circular(_borderRadius),
+                color: color,
+              ),
+              duration: _duration,
+              width: height,
+              height: height,
+              transform: Matrix4.translation(vmath.Vector3(0, 0, 0))
+                ..rotateZ(_rotation),
+            ),
           ),
         ),
         Row(
@@ -124,71 +125,22 @@ class _ExampleState extends State<Example> {
             FlatButton(
               onPressed: () {
                 setState(() {
-                  _opacity = _opacity == 1 ? 0 : 1;
+                  _duration = Duration(milliseconds: 1000);
                 });
               },
               child: const Text(
-                'Opacity',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-            FlatButton(
-              onPressed: () {
-                setState(_animateContainer);
-              },
-              child: const Text(
-                'Container',
+                '1000',
                 style: TextStyle(color: Colors.black),
               ),
             ),
             FlatButton(
               onPressed: () {
                 setState(() {
-                  _borderSize = _random.nextInt(10).toDouble();
+                  _duration = Duration(milliseconds: 200);
                 });
               },
               child: const Text(
-                'BorderSize',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-            FlatButton(
-              onPressed: () {
-                setState(() {
-                  _boxShadow = [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(_random.nextInt(20).toDouble(),
-                          _random.nextInt(20).toDouble()),
-                      blurRadius: _random.nextInt(30).toDouble(),
-                    )
-                  ];
-                });
-              },
-              child: const Text(
-                'Shadow',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-            FlatButton(
-              onPressed: () {
-                setState(() {
-                  _rotation = _random.nextInt(200).toDouble();
-                });
-              },
-              child: const Text(
-                'Rotation',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-            FlatButton(
-              onPressed: () {
-                setState(() {
-                  _borderRadius = _random.nextInt(100).toDouble();
-                });
-              },
-              child: const Text(
-                'BorderRadius',
+                '200',
                 style: TextStyle(color: Colors.black),
               ),
             ),
@@ -229,17 +181,7 @@ class _ExampleState extends State<Example> {
                 style: TextStyle(color: Colors.black),
               ),
             ),
-            FlatButton(
-              onPressed: () {
-                setState(() {
-                  _curve = Curves.bounceInOut;
-                });
-              },
-              child: const Text(
-                'BounceInOut',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),],
+          ],
         )
       ],
     );
