@@ -12,6 +12,7 @@ import 'package:flutter_presentations/features/devfast2020/pages/intro_page.dart
 import 'package:flutter_presentations/features/devfast2020/pages/next_step.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_basic.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_beginning.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/tween_animaition_builder.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/wavy_slider.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/what_is_flutter.dart';
 import 'package:flutter_presentations/shared/logo.dart';
@@ -75,6 +76,8 @@ class _DevFast2020State extends State<DevFast2020> {
               ImplicitAnimation(presentationController),
               BuiltInExample(presentationController),
               BuiltInCodeExample(),
+              TweenAnimationBuilderIntro(presentationController),
+              TweenAnimationBuilderTest(),
 
               TheApp(presentationController),// to detlete
             ];
