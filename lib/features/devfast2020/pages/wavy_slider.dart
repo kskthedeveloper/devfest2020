@@ -22,6 +22,7 @@ class WavySlider extends StatelessWidget {
           Text('Wavy Slider'),
           Image.asset('assets/ui_2.gif'),
           Image.asset('assets/ui_2.gif'),
+          Image.asset('assets/ui_2.gif'),
         ],
       ),
     );

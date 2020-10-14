@@ -16,7 +16,7 @@ class WhatIsFlutter extends StatelessWidget {
       style: Theme.of(context).textTheme.headline5,
       child: StackedPageWithTitle(
         controller: controller,
-        spacing: 250,
+        spacing: 140,
         children: [
           Text('Cool UI/Animations'),
           Image.asset('assets/ui_2.gif'),

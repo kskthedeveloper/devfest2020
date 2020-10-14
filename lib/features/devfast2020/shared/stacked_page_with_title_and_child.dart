@@ -66,8 +66,8 @@ class _StackedPageWithTitleAndChildState extends State<StackedPageWithTitleAndCh
           if(index == 0 ) {
             return AnimatedPositioned(
               duration: const Duration(milliseconds: 300),
-              top: _visibleChildren != 0 ? 100.0 : 600.0,
-              left: _visibleChildren != 0 ? 10.0 : 600.0,
+              top: _visibleChildren != 0 ? 100.0 : 450.0,
+              left: _visibleChildren != 0 ? 10.0 : 400.0,
               child: AnimatedOpacity(
                 duration: const Duration(milliseconds: 200),
                 // opacity: _visibleChildren > index ? 1 : 0,
@@ -81,6 +81,7 @@ class _StackedPageWithTitleAndChildState extends State<StackedPageWithTitleAndCh
             return AnimatedPositioned(
               duration: const Duration(milliseconds: 300),
               top: 250,
+              width: _visibleChildren > 1 ? 330.0 : 270.0,
               left: _visibleChildren > 1 ? 200.0 : 600.0,
               child: AnimatedOpacity(
                 duration: const Duration(milliseconds: 200),
@@ -94,7 +95,7 @@ class _StackedPageWithTitleAndChildState extends State<StackedPageWithTitleAndCh
             top: 250,
             left: (index.toDouble() * widget.spacing) + (index.toDouble() * widget.spacing),
             child: Container(
-              // width: 400,
+              width: 270,
               child: AnimatedOpacity(
                 duration: const Duration(milliseconds: 200),
                 opacity: _visibleChildren > index ? 1 : 0,
