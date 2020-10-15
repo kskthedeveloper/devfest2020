@@ -7,7 +7,7 @@ import 'package:flutter_presentations/shared/stacked_page.dart';
 import 'package:presentation/presentation.dart';
 import 'package:vector_math/vector_math_64.dart' as vmath;
 
-class BuiltInExample extends StatelessWidget {
+class BuiltInExample extends StatefulWidget {
   const BuiltInExample(
       this.controller, {
         Key key,
@@ -15,38 +15,73 @@ class BuiltInExample extends StatelessWidget {
   final PresentationController controller;
 
   @override
+  _BuiltInExampleState createState() => _BuiltInExampleState();
+}
+
+class _BuiltInExampleState extends State<BuiltInExample> {
+  double _opacity = 0.0;
+  var _color = Colors.lightBlue;
+
+  @override
   Widget build(BuildContext context) {
     return DefaultTextStyle.merge(
       style: Theme.of(context).textTheme.headline5,
-      child: Row(
+      child: Stack(
         children: [
-          Expanded(
-            flex: 2,
-            child: StackedPageWithTitleAndList(
-              controller: controller,
-              spacing: 30,
-              children: const [
-                Text('Built-in Implicits Animation'),
-                Text(
-                  'What do we need?',
-                  style: TextStyle(fontSize: 50),
-                ),
-                Text(
-                  'Start Value and End Value',
-                  style: TextStyle(fontSize: 50),
-                ),
-                Text(
-                  'Duration',
-                  style: TextStyle(fontSize: 50),
-                ),
-                Text(
-                  'Curve',
-                  style: TextStyle(fontSize: 50),
-                ),
-              ],
+          Positioned(
+            right: 0,
+            child: GestureDetector(
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 200),
+                width: 30,
+                height: 30,
+                color: _color,
+              ),
+              onTap: () {
+                setState(() {
+                  _opacity = 1.0;
+                  _color = Colors.green;
+                });
+              },
             ),
           ),
-          Center(child: Example()),
+          Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: StackedPageWithTitleAndList(
+                  controller: widget.controller,
+                  spacing: 30,
+                  children: const [
+                    Text('Built-in Implicit Animation'),
+                    Text(
+                      'What do we need?',
+                      style: TextStyle(fontSize: 50),
+                    ),
+                    Text(
+                      'Start Value and End Value',
+                      style: TextStyle(fontSize: 50),
+                    ),
+                    Text(
+                      'Duration',
+                      style: TextStyle(fontSize: 50),
+                    ),
+                    Text(
+                      'Curve',
+                      style: TextStyle(fontSize: 50),
+                    ),
+                  ],
+                ),
+              ),
+              AnimatedOpacity(
+                duration: Duration(milliseconds: 200),
+                opacity: _opacity,
+                child: Center(
+                  child: Example()
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );

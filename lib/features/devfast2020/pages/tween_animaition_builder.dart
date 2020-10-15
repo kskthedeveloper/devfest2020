@@ -21,7 +21,7 @@ class TweenAnimationBuilderIntro extends StatelessWidget {
         children: [
           Text('Custom Implicit Animation'),
           Text('TweenAnimationBuilder'),
-          Text('Tween // between'),
+          Text('tween // between'),
           Text('start point, end point'),
           Text('duration'),
           Text('curve'),

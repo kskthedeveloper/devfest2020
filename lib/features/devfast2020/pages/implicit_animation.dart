@@ -7,7 +7,7 @@ import 'package:flutter_presentations/shared/stacked_page.dart';
 import 'package:presentation/presentation.dart';
 import 'package:vector_math/vector_math_64.dart' as vmath;
 
-class ImplicitAnimation extends StatelessWidget {
+class ImplicitAnimation extends StatefulWidget {
   const ImplicitAnimation(
     this.controller, {
     Key key,
@@ -15,42 +15,77 @@ class ImplicitAnimation extends StatelessWidget {
   final PresentationController controller;
 
   @override
+  _ImplicitAnimationState createState() => _ImplicitAnimationState();
+}
+
+class _ImplicitAnimationState extends State<ImplicitAnimation> {
+  double _opacity = 0.0;
+  var _color = Colors.lightBlue;
+
+  @override
   Widget build(BuildContext context) {
     return DefaultTextStyle.merge(
       style: Theme.of(context).textTheme.headline5,
-      child: Row(
+      child: Stack(
         children: [
-          Expanded(
-            flex: 2,
-            child: StackedPageWithTitleAndList(
-              controller: controller,
-              spacing: 30,
-              children: [
-                Text('Implicit Animation'),
-                Text(
-                  'Built In (AnimatedFoo)',
-                  style: TextStyle(fontSize: 50),
-                ),
-                Text(
-                  'AnimatedOpacity',
-                  style: TextStyle(fontSize: 50),
-                ),
-                Text(
-                  'AnimatedContainer',
-                  style: TextStyle(fontSize: 50),
-                ),
-                Text(
-                  'AnimatedPositioned',
-                  style: TextStyle(fontSize: 50),
-                ),
-                Text(
-                  'AnimatedSize',
-                  style: TextStyle(fontSize: 50),
-                ),
-              ],
+          Positioned(
+            right: 0,
+            child: GestureDetector(
+              child: AnimatedContainer(
+                duration: Duration(milliseconds: 200),
+                width: 30,
+                height: 30,
+                color: _color,
+              ),
+              onTap: () {
+                setState(() {
+                  _opacity = 1.0;
+                  _color = Colors.green;
+                });
+              },
             ),
           ),
-          Center(child: Example()),
+          Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: StackedPageWithTitleAndList(
+                  controller: widget.controller,
+                  spacing: 30,
+                  children: [
+                    Text('Implicit Animation'),
+                    Text(
+                      'Built In (AnimatedFoo)',
+                      style: TextStyle(fontSize: 50),
+                    ),
+                    Text(
+                      'AnimatedOpacity',
+                      style: TextStyle(fontSize: 50),
+                    ),
+                    Text(
+                      'AnimatedContainer',
+                      style: TextStyle(fontSize: 50),
+                    ),
+                    Text(
+                      'AnimatedPositioned',
+                      style: TextStyle(fontSize: 50),
+                    ),
+                    Text(
+                      'AnimatedSize',
+                      style: TextStyle(fontSize: 50),
+                    ),
+                  ],
+                ),
+              ),
+              AnimatedOpacity(
+                duration: Duration(milliseconds: 200),
+                opacity: _opacity,
+                child: Center(
+                   child: Example()
+                )
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -239,7 +274,30 @@ class _ExampleState extends State<Example> {
                 'BounceInOut',
                 style: TextStyle(color: Colors.black),
               ),
-            ),],
+            ),
+            FlatButton(
+              onPressed: () {
+                setState(() {
+                  _curve = Curves.easeIn;
+                });
+              },
+              child: const Text(
+                'EaseIn',
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+            FlatButton(
+              onPressed: () {
+                setState(() {
+                  _curve = Curves.easeOut;
+                });
+              },
+              child: const Text(
+                'EaseOut',
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
+          ],
         )
       ],
     );
