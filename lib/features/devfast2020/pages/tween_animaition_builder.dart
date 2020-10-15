@@ -38,29 +38,65 @@ class TweenAnimationBuilderTest extends StatefulWidget {
 }
 
 class _TweenAnimationBuilderTestState extends State<TweenAnimationBuilderTest> {
-  double targetValue = 40;
+  double targetValue = 30;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         print(targetValue);
         setState(() {
-          targetValue = targetValue == 10 ? 40 : 10;
+          targetValue = targetValue == 10 ? 30 : 10;
         });
       },
-      child: TweenAnimationBuilder(
-        tween: Tween<double>(begin: 0, end: targetValue),
-        duration: Duration(milliseconds: 2000),
-        builder: (BuildContext context, double _val, Widget child) {
-          return Opacity(
-            opacity: _val /targetValue > 1 ? 1 : (_val /targetValue),
-            child: Padding(
-              padding: EdgeInsets.only(top: _val * 20),
-              child: child,
+      child: Stack(
+        children: [
+          Positioned(
+              top: 300,
+              left: 30,
+              child: Row(
+                children: [
+                  Text('Start'),
+                  Container(
+                      width: 320.0,
+                      height: 2.0,
+                      color: Colors.lightBlue
+                  ),
+                ],
+              )
+          ),
+          Positioned(
+              top: 700,
+              left: 30,
+              child: Row(
+                children: [
+                  Text('End'),
+                  Container(
+                      width: 350.0,
+                      height: 2.0,
+                      color: Colors.lightBlue
+                  ),
+                ],
+              )
+          ),
+          Positioned(
+            top: 100.0,
+            left: 500,
+            child: TweenAnimationBuilder(
+              tween: Tween<double>(begin: 0, end: targetValue),
+              duration: Duration(milliseconds: 3000),
+              builder: (BuildContext context, double _val, Widget child) {
+                return Opacity(
+                  opacity: _val /targetValue > 1 ? 1 : (_val /targetValue),
+                  child: Padding(
+                    padding: EdgeInsets.only(top: _val * 20),
+                    child: child,
+                  ),
+                );
+              },
+              child: Center(child: Text('Custom Implicit Animation')),
             ),
-          );
-        },
-        child: Text('Testing'),
+          ),
+        ],
       ),
     );
   }
