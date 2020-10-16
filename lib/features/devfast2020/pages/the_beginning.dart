@@ -19,8 +19,8 @@ class TheBeginning extends StatelessWidget {
         spacing: MediaQuery.of(context).size.width / 7,
         children: [
           Text('The Beginning'),
-          Image.asset('assets/ui_2.gif'),
-          Image.asset('assets/ui_2.gif'),
+          Image.asset('assets/b_1.jpg'),
+          Image.asset('assets/b_2.gif'),
         ],
       ),
     );

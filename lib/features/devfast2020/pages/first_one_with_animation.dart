@@ -19,7 +19,7 @@ class FirstOneWithAnimation extends StatelessWidget {
         spacing: MediaQuery.of(context).size.width / 4.5,
         children: [
           Text('First One With Animation'),
-          Image.asset('assets/ui_2.gif'),
+          Image.asset('assets/f_1.gif'),
         ],
       ),
     );

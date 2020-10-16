@@ -7,10 +7,12 @@ class StackedPageWithTitle extends StatefulWidget {
     @required this.controller,
     @required this.children,
     @required this.spacing,
+    this.size: 270
   }) : super(key: key);
   final PresentationController controller;
   final List<Widget> children;
   final double spacing;
+  final double size;
 
   @override
   _StackedPageWithTitleState createState() => _StackedPageWithTitleState();
@@ -80,7 +82,7 @@ class _StackedPageWithTitleState extends State<StackedPageWithTitle>
             top: 250,
             left: (index.toDouble() * widget.spacing) + (index.toDouble() * widget.spacing),
             child: Container(
-              width: 270,
+              width: widget.size,
               child: AnimatedOpacity(
                 duration: const Duration(milliseconds: 200),
                 opacity: _visibleChildren > index ? 1 : 0,

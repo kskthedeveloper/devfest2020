@@ -20,9 +20,8 @@ class WavySlider extends StatelessWidget {
         spacing: MediaQuery.of(context).size.width / 10,
         children: [
           Text('Wavy Slider'),
-          Image.asset('assets/ui_2.gif'),
-          Image.asset('assets/ui_2.gif'),
-          Image.asset('assets/ui_2.gif'),
+          Image.asset('assets/ws.gif'),
+          Image.asset('assets/cy.jpg'),
         ],
       ),
     );

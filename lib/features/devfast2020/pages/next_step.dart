@@ -15,11 +15,12 @@ class NextStep extends StatelessWidget {
     return DefaultTextStyle.merge(
       style: Theme.of(context).textTheme.headline5,
       child: StackedPageWithTitle(
+        size: 500,
         controller: controller,
         spacing: MediaQuery.of(context).size.width / 4.5,
         children: [
           Text('Next Step'),
-          Image.asset('assets/ui_2.gif'),
+          Image.asset('assets/ns.jpg'),
         ],
       ),
     );
