@@ -19,6 +19,8 @@ import 'package:flutter_presentations/features/devfast2020/pages/built_in_explic
 import 'package:flutter_presentations/features/devfast2020/pages/built_in_explicit_animation_example_with_curve.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/built_int_explicit_animatino_example_code.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/curve_visualizer.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/custom_painter_example.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/custom_painter_intro.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/documentation_time.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/explicit_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/first_one_with_animation.dart';
@@ -132,7 +134,10 @@ class _DevFast2020State extends State<DevFast2020> {
               StaggerDemo(),
               StaggeredAnimationIntro(presentationController),
               StaggeredAnimationExampleCode(),
+              CustomPainterIntro(presentationController),
+              CustomPainterExample(),
               ImagesDemo(),
+
 
               TheApp(presentationController),// to detlete
             ];
