@@ -91,8 +91,8 @@ class _DevFast2020State extends State<DevFast2020> {
         body: Builder(
           builder: (_) {
             final children = [
-              IntroPage(),
               ExampleApp(),
+              IntroPage(),
               Flutter(presentationController),
               WhatIsFlutter(presentationController),
               TheBasic(presentationController),
