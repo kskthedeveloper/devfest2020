@@ -26,6 +26,9 @@ import 'package:flutter_presentations/features/devfast2020/pages/next_step.dart'
 import 'package:flutter_presentations/features/devfast2020/pages/next_to_explicit.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_basic.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_beginning.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/to_animated_builder.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/to_animated_widget.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/to_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/tween_animaition_builder.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/tween_animation_builder_code_example.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/wavy_slider.dart';
@@ -101,12 +104,15 @@ class _DevFast2020State extends State<DevFast2020> {
               AnimationControllerCodeExample(),
               AnimationControllerExample(),
               AnimationControllerCodeExampleWithTween(),
+              ToAnimation(presentationController),
               AnimationControllerCodeExampleWithTweenToAnimation(),
               AnimationControllerCodeExampleWithTweenToAnimationAndCurve(),
               AnimationControllerRefactoredExample(),
+              ToAnimatedBuilder(presentationController),
               AnimationControllerCodeExampleWithTweenToAnimationAndCurveToAnimatedBuilder(),
               AnimationControllerRefactoredToAnimationBuilderExample(),
               AnimationControllerCodeExampleWithTweenToAnimationAndCurveToAnimatedBuilderToAnimatedWidget(),
+              ToAnimatedWidget(presentationController),
               AnimationControllerCodeExampleWithTweenToAnimationAndCurveToAnimatedBuilderToAnimatedWidget2(),
               AnimationControllerRefactoredToAnimationBuilderToAnimatedWidgetExample(),
 
