@@ -15,15 +15,23 @@ import 'package:flutter_presentations/features/devfast2020/pages/animation_type.
 import 'package:flutter_presentations/features/devfast2020/pages/arrow_test.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/buildin_code_example.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/buildin_example.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/built_in_explicit_animation_example.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/built_in_explicit_animation_example_with_curve.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/built_int_explicit_animatino_example_code.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/curve_visualizer.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/documentation_time.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/explicit_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/first_one_with_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/flutter.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/how_to_built_in_explicit_animation.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/images_demo.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/implicit_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/intro_page.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/next_step.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/next_to_explicit.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/staggered_animation_example.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/staggered_animation_example_code.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/staggered_animation_intro.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_basic.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_beginning.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/to_animated_builder.dart';
@@ -33,6 +41,7 @@ import 'package:flutter_presentations/features/devfast2020/pages/tween_animaitio
 import 'package:flutter_presentations/features/devfast2020/pages/tween_animation_builder_code_example.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/wavy_slider.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/what_is_flutter.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/why_animated_widget.dart';
 import 'package:flutter_presentations/shared/logo.dart';
 import 'package:flutter_presentations/shared/stacked_page.dart';
 import 'package:flutter_presentations/shared/themes.dart';
@@ -115,6 +124,15 @@ class _DevFast2020State extends State<DevFast2020> {
               ToAnimatedWidget(presentationController),
               AnimationControllerCodeExampleWithTweenToAnimationAndCurveToAnimatedBuilderToAnimatedWidget2(),
               AnimationControllerRefactoredToAnimationBuilderToAnimatedWidgetExample(),
+              WhyAnimatedWidget(presentationController),
+              HowToBuiltInExplicitAnimation(presentationController),
+              BuiltInExplicitAnimationExampleCode(),
+              BuiltInExplicitAnimationExample(),
+              BuiltInExplicitAnimationExampleWithCurve(),
+              StaggerDemo(),
+              StaggeredAnimationIntro(presentationController),
+              StaggeredAnimationExampleCode(),
+              ImagesDemo(),
 
               TheApp(presentationController),// to detlete
             ];

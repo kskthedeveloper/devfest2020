@@ -41,6 +41,12 @@ class _AnimationControllerRefactoredToAnimationBuilderExampleState extends State
   }
 
   @override
+  void dispose() {
+    _sizeController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     setState(() {
       _counter++;
