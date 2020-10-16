@@ -24,12 +24,12 @@ class _ExampleAppState extends State<ExampleApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Arrow Path Example')),
+      appBar: AppBar(title: Text('')),
       body: Container(
         constraints: BoxConstraints.expand(),
-        child: CustomPaint(
-          painter: ArrowPainter(),
-        ),
+        // child: CustomPaint(
+        //   painter: ArrowPainter(),
+        // ),
       ),
     );
   }

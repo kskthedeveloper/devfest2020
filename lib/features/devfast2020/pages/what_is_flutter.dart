@@ -20,9 +20,9 @@ class WhatIsFlutter extends StatelessWidget {
         children: [
           Text('Cool UI/Animations'),
           Image.asset('assets/ui_2.gif'),
-          Image.asset('assets/ui_2.gif'),
-          Image.asset('assets/ui_2.gif'),
-          Image.asset('assets/ui_2.gif'),
+          Image.asset('assets/ui_4.gif'),
+          Image.asset('assets/ui_5.gif'),
+          Image.asset('assets/ui_6.gif'),
         ],
       ),
     );
