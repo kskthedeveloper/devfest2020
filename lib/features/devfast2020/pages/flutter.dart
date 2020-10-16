@@ -16,8 +16,10 @@ class Flutter extends StatelessWidget {
       child: StackedPage(
         controller: controller,
         children: [
-          Image.asset('assets/windows.png'),
-          Image.asset('assets/windows.png'),
+          // Image.asset('assets/windows.png'),
+          // Image.asset('assets/windows.png'),
+          Text('Flutter'),
+          Text('Dart')
         ],
       ),
     );
