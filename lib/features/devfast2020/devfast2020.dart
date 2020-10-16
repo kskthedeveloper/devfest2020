@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_presentations/features/big_applications/pages/the_app.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_code_example.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_code_example_with_tween.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_code_example_with_tween_to_animation.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_code_example_with_tween_to_animation_and_curve.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_code_example_with_tween_to_animation_and_curve_animation_builder.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_code_example_with_tween_to_animation_and_curve_animation_builder_to_animated_widget.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_code_example_with_tween_to_animation_and_curve_animation_builder_to_animated_widget_2.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_intro.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_intro_after_refactor.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_intro_after_refactor_to_animation_builder.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/animation_controller_intro_after_refactor_to_animation_builder_to_animated_widget.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/animation_type.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/arrow_test.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/buildin_code_example.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/buildin_example.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/curve_visualizer.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/documentation_time.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/explicit_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/first_one_with_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/flutter.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/implicit_animation.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/intro_page.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/next_step.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/next_to_explicit.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_basic.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_beginning.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/tween_animaition_builder.dart';
@@ -82,6 +95,20 @@ class _DevFast2020State extends State<DevFast2020> {
               TweenAnimationBuilderCodeExample(),
               TweenAnimationBuilderTest(),
               CurveVisualizer(),
+              NextToExplicitAnimation(presentationController),
+              ExplicitAnimation(presentationController),
+              AnimationControllerIntro(presentationController),
+              AnimationControllerCodeExample(),
+              AnimationControllerExample(),
+              AnimationControllerCodeExampleWithTween(),
+              AnimationControllerCodeExampleWithTweenToAnimation(),
+              AnimationControllerCodeExampleWithTweenToAnimationAndCurve(),
+              AnimationControllerRefactoredExample(),
+              AnimationControllerCodeExampleWithTweenToAnimationAndCurveToAnimatedBuilder(),
+              AnimationControllerRefactoredToAnimationBuilderExample(),
+              AnimationControllerCodeExampleWithTweenToAnimationAndCurveToAnimatedBuilderToAnimatedWidget(),
+              AnimationControllerCodeExampleWithTweenToAnimationAndCurveToAnimatedBuilderToAnimatedWidget2(),
+              AnimationControllerRefactoredToAnimationBuilderToAnimatedWidgetExample(),
 
               TheApp(presentationController),// to detlete
             ];

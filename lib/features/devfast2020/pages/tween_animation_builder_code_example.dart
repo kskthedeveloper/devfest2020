@@ -75,7 +75,7 @@ class _TweenAnimationBuilderTestState extends State<TweenAnimationBuilderTest> {
       onTap: () {
         print(targetValue);
         setState(() {
-          targetValue = targetValue == 10 ? 40 : 10; {0}
+          targetValue = targetValue == 10 ? 40 : 10;
         });
       },
       child: TweenAnimationBuilder(
