@@ -18,8 +18,10 @@ import 'package:flutter_presentations/features/devfast2020/pages/buildin_example
 import 'package:flutter_presentations/features/devfast2020/pages/built_in_explicit_animation_example.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/built_in_explicit_animation_example_with_curve.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/built_int_explicit_animatino_example_code.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/credit.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/curve_visualizer.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/custom_painter_example.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/custom_painter_example_code.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/custom_painter_intro.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/documentation_time.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/explicit_animation.dart';
@@ -31,9 +33,11 @@ import 'package:flutter_presentations/features/devfast2020/pages/implicit_animat
 import 'package:flutter_presentations/features/devfast2020/pages/intro_page.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/next_step.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/next_to_explicit.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/stagger_info.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/staggered_animation_example.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/staggered_animation_example_code.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/staggered_animation_intro.dart';
+import 'package:flutter_presentations/features/devfast2020/pages/thanks.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_basic.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/the_beginning.dart';
 import 'package:flutter_presentations/features/devfast2020/pages/to_animated_builder.dart';
@@ -131,11 +135,15 @@ class _DevFast2020State extends State<DevFast2020> {
               BuiltInExplicitAnimationExampleCode(),
               BuiltInExplicitAnimationExample(),
               BuiltInExplicitAnimationExampleWithCurve(),
-              StaggerDemo(),
               StaggeredAnimationIntro(presentationController),
+              StaggerDemo(),
+              StaggeredInfo(presentationController),
               StaggeredAnimationExampleCode(),
               CustomPainterIntro(presentationController),
+              CustomPainterExampleCode(),
               CustomPainterExample(),
+              Credit(presentationController),
+              Thanks(presentationController),
               ImagesDemo(),
 
 
@@ -161,7 +169,7 @@ class _DevFast2020State extends State<DevFast2020> {
                         visible: (page * 1000).floor() % 1000 == 0,
                         child: Row(
                           children: [
-                            Image.asset('assets/gdg.png', height: 110),
+                            Image.asset('assets/devfast.png', height: 110),
                           ],
                         ),
                       );
